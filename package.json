@@ -5,18 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "postcss ./src/input.css -o ./public/css/output.css"
+    "build:css": "postcss ./src/input.css -o ./public/css/output.css",
+    "build:js": "webpack --watch",
+    "build": "npm run build:css & npm run build:js",
+    "start": "node src/server.js",
+    "dev": "npm run build & npm run start"
   },
   "author": "Jonathan Slate",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "autoprefixer": "^10.4.18",
+    "chordproject-parser": "^0.2.14",
     "express": "^4.18.3",
     "hbs": "^4.2.0",
     "http-server": "^14.1.1",
+    "js-chordpro": "^2.0.2",
     "postcss-cli": "^11.0.0"
   }
 }

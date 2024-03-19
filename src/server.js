@@ -10,9 +10,10 @@ app.set('views', path.join(__dirname, '..', 'views'));
 app.engine('html', require('hbs').__express);
 app.set('view engine', 'html');
 
-app.get('/hei/:viewname', function (req, res) {
+app.get('/:dir/:viewname', function (req, res) {
   const viewname = req.params.viewname.replace('.html', '');
-  res.render(`hei/${viewname}`);
+  const dir = req.params.dir
+  res.render(`${dir}/${viewname}`);
 });
 
 app.listen(port, () => {
