@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "postcss ./src/input.css -o ./public/css/output.css",
-    "build:js": "webpack --watch",
+    "build:js": "webpack",
     "build": "npm run build:css & npm run build:js",
     "start": "node src/server.js",
     "dev": "npm run build & npm run start"
