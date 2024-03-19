@@ -9,7 +9,9 @@
     "build:js": "webpack",
     "build": "npm run build:css & npm run build:js",
     "start": "node src/server.js",
-    "dev": "npm run build & npm run start"
+    "watch:css": "postcss ./src/input.css -o ./public/css/output.css --watch",
+    "watch:js": "webpack --watch",
+    "dev": "npm run watch:css & npm run watch:js & npm run start"
   },
   "author": "Jonathan Slate",
   "license": "ISC",
