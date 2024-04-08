@@ -21,7 +21,12 @@ if (cp) {
 const scrollButton = document.getElementById("scroll");
 if (scrollButton) {
   scrollButton.addEventListener("click", function() {
-    slowScrollToBottom(120)
+    const delay = scrollButton.dataset.delay;
+    scrollButton.style.animation = `pulsate ${1000}ms linear infinite`;
+    setTimeout(() => {
+      scrollButton.style.animation = '';
+      slowScrollToBottom(120);
+    }, delay ? parseInt(delay) : 0);
   });
 }
 
