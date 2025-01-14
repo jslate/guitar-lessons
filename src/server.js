@@ -10,9 +10,13 @@ app.set('views', path.join(__dirname, '..', 'views'));
 app.engine('html', require('hbs').__express);
 app.set('view engine', 'html');
 
-app.get('/:dir/:viewname', function (req, res) {
-  const viewname = req.params.viewname.replace('.html', '');
-  const dir = req.params.dir
+app.get('/', function (req, res) {
+  res.render('index');
+});
+
+app.get('/:dir/:viewname?', function (req, res) {
+  let viewname = req.params.viewname ? req.params.viewname.replace('.html', '') : 'index';
+  const dir = req.params.dir;
   res.render(`${dir}/${viewname}`);
 });
 
