@@ -7,64 +7,68 @@
   </head>
   <body>
     <div class="container mx-auto px-0">
-          <div class="float-right px-2 pb-1 text-right">
-            <button id="scroll" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Scroll</button>
-            <div class="px-2 pb-1 pt-4" id="qrcode"></div>
+      <div class="float-right px-2 pb-1 text-right">
+        <div class="px-2 pb-1 pt-4 inline-block" id="qrcode"></div>
+        <form id="scrollForm" class="mb-4 mt-8 text-center bg-slate-100 p-4 rounded">
+          <div class="flex items-center">
+            <div>🐢</div>
+            <div class="w-full p-3">
+              <input type="range" id="scrollSpeed" name="scrollSpeed" min="10" max="120" value="65" class="w-full">
+            </div>
+            <div>🐇</div>
           </div>
+          <button id="scroll" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Scroll</button>
+        </form>
+      </div>
       <p class="mt-4">
         <a class="text-blue-500" href="index.html">Back to index</a>
       </p>
       <h1 class="mt-4 text-2xl font-bold">Sound Of Silence</h1>
       <p class="mb-0 italic">Words and music by Paul Simon</p>
-
-
-
       <p class="mt-0 whitespace-pre-wrap hidden" id="cp">
+        [Am] Hello darkness, my old [G]friend
+        I've come to talk with you a[Am]gain
+        Because a vision soft[F]ly cree[C]ping
+        Left its seeds while I was [F]slee[C]ping
+        And the [F]vision that was planted in my [C]brain
+        Still re[Am]mains [C]
+        Within the [G]sound of [Am]silence
 
-[Am] Hello darkness, my old [G]friend
-I've come to talk with you a[Am]gain
-Because a vision soft[F]ly cree[C]ping
-Left its seeds while I was [F]slee[C]ping
-And the [F]vision that was planted in my [C]brain
-Still re[Am]mains [C]
-Within the [G]sound of [Am]silence
+        In restless dreams I walked a[G]lone
+        Narrow streets of cobble[Am]stone
+        'Neath the halo of a [F]street[C]lamp
+        I turned my collar to the [F]cold and [C]damp
+        When my [F]eyes were stabbed by the flash of a neon [C]light
+        That split the [Am]night [C]
+        And touched the [G]sound of [Am]silence
 
-In restless dreams I walked a[G]lone
-Narrow streets of cobble[Am]stone
-'Neath the halo of a [F]street[C]lamp
-I turned my collar to the [F]cold and [C]damp
-When my [F]eyes were stabbed by the flash of a neon [C]light
-That split the [Am]night [C]
-And touched the [G]sound of [Am]silence
+        And in the naked light I [G]saw
+        Ten thousand people, maybe [Am]more
+        People talking without [F]spea[C]king
+        People hearing without [F]list'[C]ning
+        People writing [F]songs that voices never [C]shared
+        No one [Am]dared [C]
+        Disturb the [G]sound of [Am]silence
 
-And in the naked light I [G]saw
-Ten thousand people, maybe [Am]more
-People talking without [F]spea[C]king
-People hearing without [F]list'[C]ning
-People writing [F]songs that voices never [C]shared
-No one [Am]dared [C]
-Disturb the [G]sound of [Am]silence
+        "Fools," said I, "You do not [G]know
+        Silence like a cancer [Am]grows
+        Hear my words that I might [F]teach [C]you
+        Take my arms that I might [F]reach [C]you"
+        But my [F]words like silent raindrops [C]fell [Am]
+        And [C]echoed in the [G]wells of [Am]silence
 
-"Fools," said I, "You do not [G]know
-Silence like a cancer [Am]grows
-Hear my words that I might [F]teach [C]you
-Take my arms that I might [F]reach [C]you"
-But my [F]words like silent raindrops [C]fell [Am]
-And [C]echoed in the [G]wells of [Am]silence
-
-And the people bowed and [G]prayed
-To the neon god they [Am]made
-And the sign flashed out its [F]war[C]ning
-In the words that it was [F]for[C]ming
-And the sign said, "The [F]words of the prophets
-Are written on the subway [C]walls
-And tenement [Am]halls"
-And [C]whispered in the [G]sounds of [Am]silence
+        And the people bowed and [G]prayed
+        To the neon god they [Am]made
+        And the sign flashed out its [F]war[C]ning
+        In the words that it was [F]for[C]ming
+        And the sign said, "The [F]words of the prophets
+        Are written on the subway [C]walls
+        And tenement [Am]halls"
+        And [C]whispered in the [G]sounds of [Am]silence
       </p>
       <p class="mt-4 whitespace-pre" id="cp-output"></p>
-    </p>
-    <p class="mt-4 whitespace-pre" id="cp-output"></p>
+    </div>
+    <script src="../js/qrcode.min.js"></script>
+    <script src="../js/bundle.js"></script>
   </body>
-  <script src="../js/qrcode.min.js"></script>
-  <script src="../js/bundle.js"></script>
 </html>

@@ -10,6 +10,8 @@ app.set('views', path.join(__dirname, '..', 'views'));
 app.engine('html', require('hbs').__express);
 app.set('view engine', 'html');
 
+app.get(/favicon.ico/, (req, res) => res.status(204));
+
 app.get('/', function (req, res) {
   res.render('index');
 });
