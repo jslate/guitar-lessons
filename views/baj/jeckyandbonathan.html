@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jecky & Bonathan</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Henny+Penny&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=Henny+Penny&display=swap"
       rel="stylesheet"
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "cDJFs57kPubNaFN01",
+        });
+      })();
+    </script>
     <style>
       body {
         font-family: "Fredoka", sans-serif;
@@ -15,7 +26,7 @@
         margin: 0 auto;
         padding: 2rem;
         color: #333;
-        background: linear-gradient(to right, #fef9c3, #fcd34d);
+        background: linear-gradient(to bottom, #e1d442, #fcd34d);
         border-radius: 12px;
       }
       h1 {
@@ -95,7 +106,7 @@
       from wacky and weird to warm and wonderful, there's truly something for
       everyone. We love audience participation, and everyone is encouraged to
       sing, dance, and play along with us! We look forward to entertaining you
-      in the near future—just send us a note!
+      in the near future—just send us a note with the form below!
     </p>
 
     <iframe
@@ -126,7 +137,14 @@
         >
         – Hadley Roberts
       </li>
-      <li><em>"[Testimonial from Jay coming soon]"</em></li>
+      <li>
+        <em
+          >"Jecky and Bonathan appeared in support of our theatrical production,
+          and by their attention to the music, the interests of the audience,
+          the atmosphere of the play, and their very approachable personalities,
+          turned our fun little drama into a spectacle worth noting."</em
+        >&nbsp;-Jay Cross
+      </li>
     </ul>
 
     <h2>Contact Us</h2>
@@ -145,14 +163,27 @@
       <button type="submit">Send Message</button>
     </form>
 
-    <script>
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          document.getElementById("contact-form").classList.add("hidden");
-          document.getElementById("thank-you").classList.remove("hidden");
+    <script type="text/javascript">
+      window.onload = function () {
+        const form = document.getElementById("contact-form");
+        const thankYou = document.getElementById("thank-you");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          emailjs.sendForm("service_bwrow18","template_n5a5kkx", this).then(
+            () => {
+              form.reset();
+              form.style.display = "none";
+              thankYou.classList.remove("hidden");
+            },
+            (error) => {
+              console.error("FAILED...", error);
+              alert("Oops! Something went wrong. Please try again.");
+            }
+          );
         });
+      };
     </script>
   </body>
 </html>
